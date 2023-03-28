@@ -1,7 +1,7 @@
-src-git packages https://github.com/coolsnowwolf/packages
-src-git luci https://github.com/coolsnowwolf/luci
-src-git routing https://github.com/coolsnowwolf/routing
-src-git telephony https://git.openwrt.org/feed/telephony.git
+src-git packages https://github.com/coolsnowwolf/packages^e5fc54e17f361888a1ea47171ea330d4822c86df
+src-git luci https://github.com/coolsnowwolf/luci^cec860d6c63a3c21a81bdc1bde4a78964e4488a8
+src-git routing https://github.com/coolsnowwolf/routing^160eae1216c166153f1c0d303f41f33ca0032c2c
+src-git telephony https://git.openwrt.org/feed/telephony.git^7681ad21d85dd6ee4dbca6c66e5ed3efc1a272b1
 #src-git helloworld https://github.com/fw876/helloworld.git
 #src-git oui https://github.com/zhaojh329/oui.git
 #src-git video https://github.com/openwrt/video.git
