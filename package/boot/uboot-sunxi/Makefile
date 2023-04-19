@@ -9,9 +9,9 @@
 include $(TOPDIR)/rules.mk
 include $(INCLUDE_DIR)/kernel.mk
 
-PKG_VERSION:=2020.04
+PKG_VERSION:=2021.10
 
-PKG_HASH:=fe732aaf037d9cc3c0909bad8362af366ae964bbdac6913a34081ff4ad565372
+PKG_HASH:=cde723e19262e646f2670d25e5ec4b1b368490de950d4e26275a988c36df0bd4
 
 PKG_MAINTAINER:=Zoltan HERPAI <wigyori@uid0.hu>
 
@@ -304,6 +304,15 @@ define U-Boot/orangepi_zero_plus
   ATF:=a64
 endef
 
+define U-Boot/orangepi_zero2
+  BUILD_SUBTARGET:=cortexa53
+  NAME:=Orange Pi Zero2 (H616)
+  DEPENDS:=+PACKAGE_u-boot-orangepi_zero2:trusted-firmware-a-sunxi-h616
+  BUILD_DEVICES:=xunlong_orangepi-zero2
+  UENV:=h616
+  ATF:=h616
+endef
+
 define U-Boot/orangepi_pc2
   BUILD_SUBTARGET:=cortexa53
   NAME:=Xunlong Orange Pi PC2
@@ -370,6 +379,7 @@ UBOOT_TARGETS := \
 	pine64_plus \
 	sopine_baseboard \
 	orangepi_zero_plus \
+	orangepi_zero2 \
 	libretech_all_h3_cc_h5
 
 UBOOT_CONFIGURE_VARS += USE_PRIVATE_LIBGCC=yes

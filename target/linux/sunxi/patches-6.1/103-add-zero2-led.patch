@@ -1,0 +1,37 @@
+Index: b/arch/arm64/boot/dts/allwinner/sun50i-h616-orangepi-zero2.dts
+===================================================================
+--- a/arch/arm64/boot/dts/allwinner/sun50i-h616-orangepi-zero2.dts	2023-04-18 21:37:04.712542693 +0800
++++ b/arch/arm64/boot/dts/allwinner/sun50i-h616-orangepi-zero2.dts	2023-04-18 21:37:54.698141911 +0800
+@@ -17,6 +17,10 @@
+ 	compatible = "xunlong,orangepi-zero2", "allwinner,sun50i-h616";
+ 
+ 	aliases {
++		led-boot = &sys_led;
++		led-failsafe = &sys_led;
++		led-running = &sys_led;
++		led-upgrade = &sys_led;
+ 		ethernet0 = &emac0;
+ 		serial0 = &uart0;
+ 	};
+@@ -28,17 +32,18 @@
+ 	leds {
+ 		compatible = "gpio-leds";
+ 
+-		led-0 {
++		sys_led: led-0 {
+ 			function = LED_FUNCTION_POWER;
+ 			color = <LED_COLOR_ID_RED>;
+ 			gpios = <&pio 2 12 GPIO_ACTIVE_HIGH>; /* PC12 */
+-			default-state = "on";
++			label = "orangepi-zero2:red:sys";
+ 		};
+ 
+-		led-1 {
++		lan_led: led-1 {
+ 			function = LED_FUNCTION_STATUS;
+ 			color = <LED_COLOR_ID_GREEN>;
+ 			gpios = <&pio 2 13 GPIO_ACTIVE_HIGH>; /* PC13 */
++			label = "orangepi-zero2:green:lan";
+ 		};
+ 	};
+ 
