@@ -1,8 +1,8 @@
 Index: b/arch/arm64/boot/dts/allwinner/sun50i-h616-orangepi-zero2.dts
 ===================================================================
---- a/arch/arm64/boot/dts/allwinner/sun50i-h616-orangepi-zero2.dts	2023-04-18 21:25:20.757085818 +0800
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-h616-orangepi-zero2.dts	2023-04-18 21:26:28.689064557 +0800
-@@ -50,6 +50,21 @@
+--- a/arch/arm64/boot/dts/allwinner/sun50i-h616-orangepi-zero2.dts
++++ b/arch/arm64/boot/dts/allwinner/sun50i-h616-orangepi-zero2.dts
+@@ -50,8 +50,25 @@
  		regulator-max-microvolt = <5000000>;
  		regulator-always-on;
  	};
@@ -23,8 +23,23 @@ Index: b/arch/arm64/boot/dts/allwinner/sun50i-h616-orangepi-zero2.dts
 +	status = "okay";
  };
  
++/* USB 2 & 3 are on headers only. */
++
  &emac0 {
-@@ -228,3 +243,24 @@
+ 	pinctrl-names = "default";
+ 	pinctrl-0 = <&ext_rgmii_pins>;
+@@ -77,6 +94,10 @@
+ 	status = "okay";
+ };
+ 
++&ohci1 {
++	status = "okay";
++};
++
+ &r_i2c {
+ 	status = "okay";
+ 
+@@ -216,3 +237,24 @@
  	pinctrl-0 = <&uart0_ph_pins>;
  	status = "okay";
  };
@@ -51,8 +66,8 @@ Index: b/arch/arm64/boot/dts/allwinner/sun50i-h616-orangepi-zero2.dts
 +};
 Index: b/arch/arm64/boot/dts/allwinner/sun50i-h616.dtsi
 ===================================================================
---- a/arch/arm64/boot/dts/allwinner/sun50i-h616.dtsi	2023-04-18 21:25:20.757085818 +0800
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-h616.dtsi	2023-04-18 21:25:20.753085821 +0800
+--- a/arch/arm64/boot/dts/allwinner/sun50i-h616.dtsi
++++ b/arch/arm64/boot/dts/allwinner/sun50i-h616.dtsi
 @@ -504,6 +504,166 @@
  			};
  		};
