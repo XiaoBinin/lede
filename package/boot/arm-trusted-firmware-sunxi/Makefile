@@ -12,9 +12,9 @@ PKG_RELEASE:=1
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL=https://github.com/ARM-software/arm-trusted-firmware
-PKG_SOURCE_DATE:=2020-11-17
-PKG_SOURCE_VERSION:=e2c509a39c6cc4dda8734e6509cdbe6e3603cdfc
-PKG_MIRROR_HASH:=b212d369a5286ebbf6a5616486efa05fa54d4294fd6e9ba2e54fdfae9eda918d
+PKG_SOURCE_DATE:=2022-06-01
+PKG_SOURCE_VERSION:=35f4c7295bafeb32c8bcbdfb6a3f2e74a57e732b
+PKG_MIRROR_HASH:=88a282242ca5c921ce43eb913112e964ae87ddf85a87f2d4d6d192d1fe943370
 
 PKG_LICENSE:=BSD-3-Clause
 PKG_LICENSE_FILES:=license.md
@@ -40,9 +40,15 @@ define Trusted-Firmware-A/sunxi-h6
 	PLAT:=sun50i_h6
 endef
 
+define Trusted-Firmware-A/sunxi-h616
+	NAME:=Allwinner H616
+	PLAT:=sun50i_h616
+endef
+
 TFA_TARGETS:= \
 	sunxi-a64 \
-	sunxi-h6
+	sunxi-h6 \
+	sunxi-h616
 
 define Package/trusted-firmware-a/install
 	$(INSTALL_DIR) $(STAGING_DIR_IMAGE)
